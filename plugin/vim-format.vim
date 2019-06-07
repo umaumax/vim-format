@@ -85,7 +85,7 @@ function! s:vim_format(key,args)
 				\}
 	let l:vim_format_full_cmd = l:vim_format_cmd_format
 	for key in keys(sprintf_dict)
-		let l:vim_format_full_cmd=substitute(l:vim_format_full_cmd,'{' . key . '}',sprintf_dict[key],'')
+		let l:vim_format_full_cmd=substitute(l:vim_format_full_cmd,'{' . key . '}',sprintf_dict[key], 'g')
 	endfor
 	" NOTE: format
 	" NOTE: output is stdout
