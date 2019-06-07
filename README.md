@@ -5,6 +5,15 @@ vim plugin for json formatting
 ## support format list
 * json
 
+### json - jq
+[Download jq]( https://stedolan.github.io/jq/download/ )
+```
+# Mac OS X
+brew install jq
+# Ubuntu
+sudo apt-get install jq
+```
+
 ## how to use
 ```
 Plug 'umaumax/vim-format'
