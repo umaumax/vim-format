@@ -16,7 +16,8 @@ endif
 " * {input_file}
 let g:vim_format_list={
 			\ 'json':{'autocmd':['*.json'],'cmds':[{'requirements':['jq'], 'shell':'cat {input_file} | jq .'}]},
-			\ 'cmake':{'autocmd':['*.cmake','CMakeLists.txt'],'cmds':[{'requirements':['cmake-format'], 'shell':'cmake-format {input_file}'}]}
+			\ 'cmake':{'autocmd':['*.cmake','CMakeLists.txt'],'cmds':[{'requirements':['cmake-format'], 'shell':'cmake-format {input_file}'}]},
+			\ 'yaml':{'autocmd':['*.{yaml,yml}'],'cmds':[{'requirements':['align'], 'shell':'align {input_file}'}]}
 			\ }
 
 " Ref: 'rhysd/vim-clang-format' /autoload/clang_format.vim

@@ -5,6 +5,7 @@ vim plugin for misc formatting
 ## support format list
 * json
 * cmake
+* yaml
 
 ### cmake - cmake_format
 [umaumax/cmake\_format: Source code formatter for cmake listfiles\.]( https://github.com/umaumax/cmake_format )
@@ -19,6 +20,12 @@ pip install https://github.com/umaumax/cmake_format/archive/master.tar.gz
 brew install jq
 # Ubuntu
 sudo apt-get install jq
+```
+
+### yaml - align-yaml
+[align\-yaml]( https://github.com/jonschlinkert/align-yaml )
+```
+npm install -g align-yaml
 ```
 
 ## how to use
