@@ -12,8 +12,11 @@ endif
 
 " TODO: add other file types
 " NOTE: key must be same as FileType
+" set below values as python format style
+" * {input_file}
 let g:vim_format_list={
-			\ 'json':{'autocmd':['*.json'],'cmds':[{'requirements':['jq'], 'shell':'cat {input_file} | jq .'}]}
+			\ 'json':{'autocmd':['*.json'],'cmds':[{'requirements':['jq'], 'shell':'cat {input_file} | jq .'}]},
+			\ 'cmake':{'autocmd':['*.cmake','CMakeLists.txt'],'cmds':[{'requirements':['cmake-format'], 'shell':'cmake-format {input_file}'}]}
 			\ }
 
 " Ref: 'rhysd/vim-clang-format' /autoload/clang_format.vim

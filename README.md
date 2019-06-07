@@ -1,9 +1,16 @@
 # vim-format
 
-vim plugin for json formatting
+vim plugin for misc formatting
 
 ## support format list
 * json
+* cmake
+
+### cmake - cmake_format
+[umaumax/cmake\_format: Source code formatter for cmake listfiles\.]( https://github.com/umaumax/cmake_format )
+```
+pip install https://github.com/umaumax/cmake_format/archive/master.tar.gz
+```
 
 ### json - jq
 [Download jq]( https://stedolan.github.io/jq/download/ )
