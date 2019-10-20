@@ -38,10 +38,10 @@ npm install -g align-yaml
 ```
 Plug 'umaumax/vim-format'
 
-# auto
+" auto
 let g:vim_format_fmt_on_save = 1
 
-# manual
+" manual
 let g:format_flag=1
 augroup json_group
   autocmd!
@@ -49,4 +49,9 @@ augroup json_group
   autocmd FileType json autocmd BufWritePre *.json if g:format_flag | :JsonFormat | endif
   autocmd FileType json autocmd! json_group FileType
 augroup END
+
+" for original command
+let g:vim_format_list={
+  \ 'jenkins':{'autocmd':['*.groovy'],'cmds':[{'requirements':['goenkins-format'], 'shell':'cat {input_file} | goenkins-format'}]},
+  \ }
 ```

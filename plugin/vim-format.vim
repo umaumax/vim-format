@@ -10,17 +10,17 @@ if !exists("g:vim_format_fmt_on_save")
 	let g:vim_format_fmt_on_save = 0
 endif
 
-" TODO: add other file types
 " NOTE: key must be same as FileType
 " set below values as python format style
 " * {input_file}
-let g:vim_format_list={
+let s:default_vim_format_list={
 			\ 'json':{'autocmd':['*.json'],'cmds':[{'requirements':['jq'], 'shell':'cat {input_file} | jq .'}]},
 			\ 'cmake':{'autocmd':['*.cmake','CMakeLists.txt'],'cmds':[{'requirements':['cmake-format'], 'shell':'cmake-format {input_file}'}]},
 			\ 'yaml':{'autocmd':['*.{yaml,yml}'],'cmds':[{'requirements':['align'], 'shell':'align {input_file} > /dev/null && cat {input_file}'}]},
 			\ 'sh':{'autocmd':['*.{sh,bashrc,bashenv,bash_profile}','profile','environment'],'cmds':[{'requirements':['shfmt'], 'shell':'cat {input_file} | shfmt -i 2'}]},
 			\ 'zsh':{'autocmd':['*.{zsh,zshrc,zshenv,zprofile}'],'cmds':[{'requirements':['shfmt'], 'shell':'cat {input_file} | shfmt -i 2'}]}
 			\ }
+let g:vim_format_list=extend(copy(s:default_vim_format_list), get(g:, "vim_format_list", {}))
 
 " Ref: 'rhysd/vim-clang-format' /autoload/clang_format.vim
 function! s:has_vimproc() abort
@@ -53,7 +53,8 @@ function! s:vim_format(key,args)
 	let cmds_dict = g:vim_format_list[a:key]['cmds']
 	let l:vim_format_cmd_format = ''
 	for cmd_set in cmds_dict
-		" TODO: cache cmd requirements result
+		" FIX: cache cmd requirements result?
+		" depend on invalid or valid for newly install comand which was not found
 		let cmds=cmd_set['requirements']
 		let cmd_cnt=0
 		for cmd in cmds
