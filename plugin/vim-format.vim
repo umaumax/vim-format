@@ -17,8 +17,8 @@ let s:default_vim_format_list={
 			\ 'json':{'autocmd':['*.json'],'cmds':[{'requirements':['jq'], 'shell':'cat {input_file} | jq .'}]},
 			\ 'cmake':{'autocmd':['*.cmake','CMakeLists.txt'],'cmds':[{'requirements':['cmake-format'], 'shell':'cmake-format {input_file}'}]},
 			\ 'yaml':{'autocmd':['*.{yaml,yml}'],'cmds':[{'requirements':['align'], 'shell':'align {input_file} > /dev/null && cat {input_file}'}]},
-			\ 'sh':{'autocmd':['*.{sh,bashrc,bashenv,bash_profile}','profile','environment'],'cmds':[{'requirements':['shfmt'], 'shell':'cat {input_file} | shfmt -i 2'}]},
-			\ 'zsh':{'autocmd':['*.{zsh,zshrc,zshenv,zprofile}'],'cmds':[{'requirements':['shfmt'], 'shell':'cat {input_file} | shfmt -i 2'}]}
+			\ 'sh':{'autocmd':['*.{sh,bashrc,bashenv,bash_profile}','profile','environment'],'cmds':[{'requirements':['shfmt'], 'shell':'cat {input_file} | shfmt -i 2 -ci -bn'}]},
+			\ 'zsh':{'autocmd':['*.{zsh,zshrc,zshenv,zprofile}'],'cmds':[{'requirements':['shfmt'], 'shell':'cat {input_file} | shfmt -i 2 -ci -bn'}]}
 			\ }
 let g:vim_format_list=extend(copy(s:default_vim_format_list), get(g:, "vim_format_list", {}))
 
