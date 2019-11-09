@@ -23,6 +23,12 @@ brew install jq
 sudo apt-get install jq
 ```
 
+### python - autopep8
+[hhatto/autopep8: A tool that automatically formats Python code to conform to the PEP 8 style guide\.]( https://github.com/hhatto/autopep8 )
+```
+pip install autopep8
+```
+
 ### yaml - align-yaml
 [align\-yaml]( https://github.com/jonschlinkert/align-yaml )
 ```
