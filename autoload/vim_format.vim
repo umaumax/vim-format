@@ -5,6 +5,18 @@ let g:loaded_vim_format = 1
 let s:save_cpo = &cpo
 set cpo&vim
 
+function vim_format#check_health()
+  let ng_cnt=0
+  for key in keys(g:vim_format_list)
+    if s:get_vim_format_cmd_format(key) == ""
+      let ng_cnt+=1
+    endif
+  endfor
+  if ng_cnt == 0
+    echom '[OK]'
+  endif
+endfunction
+
 " Ref: 'rhysd/vim-clang-format' /autoload/clang_format.vim
 function! s:has_vimproc() abort
   if !exists('s:exists_vimproc')
@@ -32,7 +44,8 @@ function! s:error_message(result) abort
   echohl None
 endfunction
 
-function! vim_format#format(key, args)
+function! s:get_vim_format_cmd_format(key, ...)
+  let l:verbose=get(a:, 1, 1)
   let cmds_dict = g:vim_format_list[a:key]['cmds']
   let l:vim_format_cmd_format = ''
   for cmd_set in cmds_dict
@@ -51,11 +64,19 @@ function! vim_format#format(key, args)
     endif
     let l:vim_format_cmd_format = cmd_set['shell']
   endfor
-  if l:vim_format_cmd_format == ''
+  if l:verbose && l:vim_format_cmd_format == ''
     echohl ErrorMsg
-    echomsg 'Not found format command!'
+    echomsg "Not found format command '".cmd."'"
     echomsg ''
     echohl None
+    return
+  endif
+  return l:vim_format_cmd_format
+endfunction
+
+function! vim_format#format(key, args)
+  let l:vim_format_cmd_format = s:get_vim_format_cmd_format(a:key)
+  if l:vim_format_cmd_format == ''
     return
   endif
 

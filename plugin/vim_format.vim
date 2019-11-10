@@ -34,5 +34,7 @@ augroup vim_format
   endfor
 augroup END
 
+command! VimFormatCheckHealth :call vim_format#check_health()
+
 let &cpo = s:save_cpo
 unlet s:save_cpo
