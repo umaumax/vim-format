@@ -38,6 +38,11 @@ npm install -g align-yaml
 ### sh,zsh - shfmt
 [mvdan/sh: A shell parser, formatter, and interpreter \(POSIX/Bash/mksh\)]( https://github.com/mvdan/sh )
 
+### rust - rustfmt
+```
+rustup component add rustfmt
+```
+
 ----
 
 ## how to use
