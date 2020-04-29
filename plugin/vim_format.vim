@@ -19,7 +19,7 @@ let s:default_vim_format_list={
       \ 'yaml':   { 'autocmd': ['*.{yaml,yml}'],                                               'cmds': [{'requirements': ['align'],        'shell': 'align {args} {input_file} > /dev/null && cat {input_file}'}]},
       \ 'sh':     { 'autocmd': ['*.{sh,bashrc,bashenv,bash_profile}','profile','environment'], 'cmds': [{'requirements': ['shfmt'],        'shell': 'cat {input_file} | shfmt {args}', 'default_args': '-i 2 -ci -bn'}]},
       \ 'zsh':    { 'autocmd': ['*.{zsh,zshrc,zshenv,zprofile}'],                              'cmds': [{'requirements': ['shfmt'],        'shell': 'cat {input_file} | shfmt {args}', 'default_args': '-i 2 -ci -bn'}]},
-      \ 'rust':   { 'autocmd': ['*.{rs}'],                                                     'cmds': [{'requirements': ['rustfmt'],      'shell': 'rustfmt {args} -q --emit stdout {input_file}'}]},
+      \ 'rust':   { 'autocmd': ['*.{rs}'],                                                     'cmds': [{'requirements': ['rustfmt'],      'shell': 'cat {input_file} | rustfmt {args} --emit stdout --'}]},
       \ }
 let g:vim_format_list=extend(copy(s:default_vim_format_list), get(g:, "vim_format_list", {}))
 

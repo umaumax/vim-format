@@ -73,6 +73,10 @@ function! vim_format#format(key, args)
 
   " NOTE: write current buffer to tmporary file
   let tempfilepath=tempname()
+  " NOTE: rustfmt use input filepath, so you must use same directory of target file
+  " if a:key == 'rust'
+  " let tempfilepath = expand('%:p:h').'/.vim_format.tmp.'.expand('%:t')
+  " endif
   call writefile(getline(1, '$'), tempfilepath)
 
   " NOTE: build format command
@@ -87,6 +91,8 @@ function! vim_format#format(key, args)
   " NOTE: format
   " NOTE: output is stdout
   let l:vim_format_output = system(l:vim_format_full_cmd)
+
+  call delete(tempfilepath)
 
   if s:success(l:vim_format_output)
     let pos_save = a:0 >= 1 ? a:1 : getpos('.')
