@@ -49,6 +49,12 @@ rustup component add rustfmt
 その一時ファイルを編集対象のファイルと同じディレクトリに配置すれば，その検査自体は問題ないが，
 フォーマットされた結果が，stdoutに他のファイルの結果を含めて出力されてしまう問題がある
 
+### nasm - nasmfmt
+[yamnikov\-oleg/nasmfmt: Formatter for NASM source files]( https://github.com/yamnikov-oleg/nasmfmt )
+```
+go get -u github.com/yamnikov-oleg/nasmfmt
+```
+
 ----
 
 ## how to use
