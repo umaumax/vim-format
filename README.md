@@ -14,7 +14,13 @@ vim plugin for misc formatting
 pip install https://github.com/umaumax/cmake_format/archive/master.tar.gz
 ```
 
-### json - jq
+### json - jsonc, jq
+jsonc
+``` bash
+go get -u github.com/umaumax/jsonc/...
+```
+
+jq
 [Download jq]( https://stedolan.github.io/jq/download/ )
 ```
 # Mac OS X

@@ -13,7 +13,10 @@ endif
 " set below values as python format style
 " * {input_file}
 let s:default_vim_format_list={
-      \ 'json':   { 'autocmd-filename': ['*.json'],                                                     'cmds': [{'requirements': ['jq'],           'shell': 'cat {input_file} | jq {args}', 'default_args':'.'}]},
+      \ 'json':   { 'autocmd-filename': ['*.json'], 'cmds': [
+      \   {'requirements': ['jsonc'], 'shell': 'cat {input_file} | jsonc'},
+      \   {'requirements': ['jq'],    'shell': 'cat {input_file} | jq {args}', 'default_args':'.'}
+      \ ]},
       \ 'cmake':  { 'autocmd-filename': ['*.cmake','CMakeLists.txt'],                                   'cmds': [{'requirements': ['cmake-format'], 'shell': 'cmake-format {args} {input_file}'}]},
       \ 'python': { 'autocmd-filename': ['*.{py}'],                                                     'cmds': [{'requirements': ['autopep8'],     'shell': 'autopep8 {args} {input_file}'}]},
       \ 'yaml':   { 'autocmd-filename': ['*.{yaml,yml}'],                                               'cmds': [{'requirements': ['align'],        'shell': 'align {args} {input_file} > /dev/null && cat {input_file}'}]},
