@@ -10,7 +10,7 @@ vim plugin for misc formatting
 
 ### cmake - cmake_format
 [umaumax/cmake\_format: Source code formatter for cmake listfiles\.]( https://github.com/umaumax/cmake_format )
-```
+``` bash
 pip install https://github.com/umaumax/cmake_format/archive/master.tar.gz
 ```
 
@@ -22,7 +22,7 @@ go get -u github.com/umaumax/jsonc/...
 
 jq
 [Download jq]( https://stedolan.github.io/jq/download/ )
-```
+``` bash
 # Mac OS X
 brew install jq
 # Ubuntu
@@ -31,13 +31,13 @@ sudo apt-get install jq
 
 ### python - autopep8
 [hhatto/autopep8: A tool that automatically formats Python code to conform to the PEP 8 style guide\.]( https://github.com/hhatto/autopep8 )
-```
+``` bash
 pip install autopep8
 ```
 
 ### yaml - align-yaml
 [align\-yaml]( https://github.com/jonschlinkert/align-yaml )
-```
+``` bash
 npm install -g align-yaml
 ```
 
@@ -45,7 +45,7 @@ npm install -g align-yaml
 [mvdan/sh: A shell parser, formatter, and interpreter \(POSIX/Bash/mksh\)]( https://github.com/mvdan/sh )
 
 ### rust - rustfmt
-```
+``` bash
 rustup component add rustfmt
 ```
 `rustfmt`の仕様でファイル名を指定するとそのファイルを基準にして，各モジュールが適切に設定されているかを検査する
@@ -57,14 +57,14 @@ rustup component add rustfmt
 
 ### nasm - nasmfmt
 [yamnikov\-oleg/nasmfmt: Formatter for NASM source files]( https://github.com/yamnikov-oleg/nasmfmt )
-```
+``` bash
 go get -u github.com/yamnikov-oleg/nasmfmt
 ```
 
 ----
 
 ## how to use
-```
+``` vim
 Plug 'umaumax/vim-format'
 
 " auto
