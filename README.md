@@ -14,10 +14,10 @@ vim plugin for misc formatting
 pip install https://github.com/umaumax/cmake_format/archive/master.tar.gz
 ```
 
-### json - jsonc, jq
-jsonc
+### json - prettier, jq
+prettier
 ``` bash
-go get -u github.com/umaumax/jsonc/...
+npm install -g prettier
 ```
 
 jq
