@@ -14,7 +14,7 @@ endif
 " * {input_file}
 let s:default_vim_format_list={
       \ 'json':   { 'autocmd-filename': ['*.json'], 'cmds': [
-      \   {'requirements': ['prettier'], 'shell': 'cat {input_file} | prettier --stdin-filepath .json'},
+      \   {'requirements': ['prettier'], 'shell': 'cat {input_file} | prettier --stdin-filepath .json 2>/dev/null '},
       \   {'requirements': ['jq'],    'shell': 'cat {input_file} | jq {args}', 'default_args':'.'}
       \ ]},
       \ 'cmake':  { 'autocmd-filename': ['*.cmake','CMakeLists.txt'],                                   'cmds': [{'requirements': ['cmake-format'], 'shell': 'cmake-format {args} {input_file}'}]},
