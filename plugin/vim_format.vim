@@ -20,6 +20,7 @@ let s:default_vim_format_list={
       \ 'cmake':  { 'autocmd-filename': ['*.cmake','CMakeLists.txt'],                                   'cmds': [{'requirements': ['cmake-format'], 'shell': 'cmake-format {args} {input_file}', 'default_args': '--enable-markup=False'}]},
       \ 'python': { 'autocmd-filename': ['*.{py}'],                                                     'cmds': [{'requirements': ['autopep8'],     'shell': 'autopep8 {args} {input_file}'}]},
       \ 'yaml':   { 'autocmd-filename': ['*.{yaml,yml}'],                                               'cmds': [{'requirements': ['align'],        'shell': 'align {args} {input_file} > /dev/null && cat {input_file}'}]},
+      \ 'toml':   { 'autocmd-filename': ['*.{toml}'],                                                   'cmds': [{'requirements': ['prettier'],     'shell': 'prettier {args} --parser=toml {input_file}'}]},
       \ 'sh':     { 'autocmd-filename': ['*.{sh,bashrc,bashenv,bash_profile}','profile','environment'], 'cmds': [{'requirements': ['shfmt'],        'shell': 'cat {input_file} | shfmt {args}', 'default_args': '-i 2 -ci -bn'}]},
       \ 'zsh':    { 'autocmd-filename': ['*.{zsh,zshrc,zshenv,zprofile}'],                              'cmds': [{'requirements': ['shfmt'],        'shell': 'cat {input_file} | shfmt {args}', 'default_args': '-i 2 -ci -bn'}]},
       \ 'rust':   { 'autocmd-filename': ['*.{rs}'],                                                     'cmds': [{'requirements': ['rustfmt'],      'shell': 'cat {input_file} | rustfmt {args} --emit stdout --'}]},

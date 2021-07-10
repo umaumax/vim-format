@@ -41,6 +41,11 @@ pip install autopep8
 npm install -g align-yaml
 ```
 
+### toml - prettier
+``` bash
+npm install prettier prettier-plugin-toml --save-dev --save-exact
+```
+
 ### sh,zsh - shfmt
 [mvdan/sh: A shell parser, formatter, and interpreter \(POSIX/Bash/mksh\)]( https://github.com/mvdan/sh )
 
