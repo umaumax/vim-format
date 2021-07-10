@@ -72,7 +72,7 @@ function! vim_format#format(key, args)
   endif
 
   " NOTE: write current buffer to tmporary file
-  let tempfilepath=tempname()
+  let tempfilepath=tempname() . '.' . expand('%:e')
   " NOTE: rustfmt use input filepath, so you must use same directory of target file
   " if a:key == 'rust'
   " let tempfilepath = expand('%:p:h').'/.vim_format.tmp.'.expand('%:t')
