@@ -11,6 +11,7 @@ vim plugin for misc formatting
 * sh,zsh
 * rust
 * nasm
+* golang
 
 ### cmake - cmake_format
 [umaumax/cmake\_format: Source code formatter for cmake listfiles\.]( https://github.com/umaumax/cmake_format )
@@ -74,6 +75,8 @@ go get -u github.com/yamnikov-oleg/nasmfmt
 ``` bash
 npm install prettier prettier-plugin-toml --save-dev --save-exact
 ```
+
+### golang - gofmt
 
 ----
 
