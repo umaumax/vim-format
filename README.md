@@ -3,10 +3,14 @@
 vim plugin for misc formatting
 
 ## support format list
-* json
 * cmake
+* json
+* python
 * yaml
+* toml
 * sh,zsh
+* rust
+* nasm
 
 ### cmake - cmake_format
 [umaumax/cmake\_format: Source code formatter for cmake listfiles\.]( https://github.com/umaumax/cmake_format )
