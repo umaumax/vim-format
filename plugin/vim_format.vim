@@ -30,6 +30,9 @@ let s:default_vim_format_list={
       \ 'awk':    { 'autocmd-filename': ['*.awk'],                                                      'cmds': [{'requirements': ['gawk'],         'shell': 'gawk -o- "$(cat {input_file})"'}]},
       \ }
 let g:vim_format_list=extend(copy(s:default_vim_format_list), get(g:, "vim_format_list", {}))
+if !exists("g:Vim_format_pre_hook")
+  let g:Vim_format_pre_hook = { key, args -> v:true }
+endif
 
 augroup vim_format
   autocmd!

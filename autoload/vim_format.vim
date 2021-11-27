@@ -70,6 +70,16 @@ function! vim_format#format(key, args)
   if empty(l:vim_format_cmd_format)
     return
   endif
+  if type(g:Vim_format_pre_hook) == type({ key, args -> v:true })
+    if !g:Vim_format_pre_hook(a:key, a:args)
+      return
+    endif
+  else
+    echohl ErrorMsg
+    echomsg "g:Vim_format_pre_hook type is invalid: required e.g. { key, args -> v:true }"
+    echomsg ''
+    echohl None
+  endif
 
   " NOTE: write current buffer to tmporary file
   let tempfilepath=tempname() . '.' . expand('%:e')
