@@ -12,6 +12,7 @@ vim plugin for misc formatting
 * rust
 * nasm
 * golang
+* awk
 
 ### cmake - cmake_format
 [umaumax/cmake\_format: Source code formatter for cmake listfiles\.]( https://github.com/umaumax/cmake_format )
@@ -106,3 +107,7 @@ let g:vim_format_list={
   \ 'jenkins':{'autocmd':['*.groovy'],'cmds':[{'requirements':['goenkins-format'], 'shell':'cat {input_file} | goenkins-format'}]},
   \ }
 ```
+
+The plugin will automatically define the commands with the following rules.
+* key is python: PythonFormat
+* key is awk:    AwkFormat
