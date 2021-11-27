@@ -27,6 +27,7 @@ let s:default_vim_format_list={
       \ 'nasm':   { 'autocmd-filetype': ['nasm'],                                                       'cmds': [{'requirements': ['nasmfmt'],      'shell': 'nasmfmt -ii 4 {input_file} && cat {input_file}'}]},
       \ 'prettier': { 'autocmd-filename': ['*.{json,toml,yaml,yml}'],                                   'cmds': [{'requirements': ['prettier'],     'shell': 'prettier {args} {input_file}'}]},
       \ 'go':     { 'autocmd-filename': ['*.go'],                                                       'cmds': [{'requirements': ['gofmt'],        'shell': 'gofmt {args} {input_file}'}]},
+      \ 'awk':    { 'autocmd-filename': ['*.awk'],                                                      'cmds': [{'requirements': ['gawk'],         'shell': 'gawk -o- "$(cat {input_file})"'}]},
       \ }
 let g:vim_format_list=extend(copy(s:default_vim_format_list), get(g:, "vim_format_list", {}))
 

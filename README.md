@@ -78,6 +78,8 @@ npm install prettier prettier-plugin-toml --save-dev --save-exact
 
 ### golang - gofmt
 
+### awk - gawk
+
 ----
 
 ## how to use
