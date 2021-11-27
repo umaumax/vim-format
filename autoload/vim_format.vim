@@ -8,7 +8,7 @@ set cpo&vim
 function vim_format#check_health()
   let ng_cnt=0
   for key in keys(g:vim_format_list)
-    if s:get_vim_format_cmd_format(key) == ""
+    if len(s:get_vim_format_cmd_format(key)) == 0
       let ng_cnt+=1
     endif
   endfor
@@ -58,7 +58,7 @@ function! s:get_vim_format_cmd_format(key, ...)
         echomsg ''
         echohl None
       endif
-      return
+      return []
     endif
     return cmd_set
   endfor
