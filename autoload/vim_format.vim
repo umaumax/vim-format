@@ -45,7 +45,7 @@ function! s:error_message(result) abort
 endfunction
 
 function! s:get_vim_format_cmd_format(key, ...)
-  let l:verbose=get(a:, 1, 1)
+  let l:verbose=get(a:, 1, v:false)
   let cmds_dict = g:vim_format_list[a:key]['cmds']
   for cmd_set in cmds_dict
     " FIX: cache cmd requirements result?
