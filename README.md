@@ -86,6 +86,13 @@ npm install prettier prettier-plugin-toml --save-dev --save-exact
 
 ### awk - gawk
 
+### lua - stylua
+[JohnnyMorganz/StyLua: An opinionated Lua code formatter]( https://github.com/JohnnyMorganz/StyLua )
+
+``` bash
+cargo install stylua
+```
+
 ----
 
 ## how to use
