@@ -87,18 +87,18 @@ npm install prettier prettier-plugin-toml --save-dev --save-exact
 ``` vim
 Plug 'umaumax/vim-format'
 
-let g:format_flag=1
+let g:my_format_flag=1
 
 " auto setting
 let g:vim_format_fmt_on_save = 1
-let g:Vim_format_pre_hook = { key, args -> g:format_flag }
+let g:Vim_format_pre_hook = { key, args -> g:my_format_flag }
 
-" manual setting
+" example of manual setting for json
 let g:vim_format_fmt_on_save = 0
 augroup json_group
   autocmd!
   autocmd FileType json autocmd BufWinEnter *.json command! -bar Format :JsonFormat
-  autocmd FileType json autocmd BufWritePre *.json if g:format_flag | :JsonFormat | endif
+  autocmd FileType json autocmd BufWritePre *.json if g:my_format_flag | :JsonFormat | endif
   autocmd FileType json autocmd! json_group FileType
 augroup END
 
@@ -109,5 +109,7 @@ let g:vim_format_list={
 ```
 
 The plugin will automatically define the commands with the following rules.
+
+e.g.
 * key is python: PythonFormat
 * key is awk:    AwkFormat
