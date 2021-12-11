@@ -2,10 +2,10 @@ if exists('g:loaded_vim_format')
   finish
 endif
 let g:loaded_vim_format = 1
-let s:save_cpo = &cpo
-set cpo&vim
+let s:save_cpo = &cpoptions
+set cpoptions&vim
 
-if !exists("g:vim_format_fmt_on_save")
+if !exists('g:vim_format_fmt_on_save')
   let g:vim_format_fmt_on_save = 0
 endif
 
@@ -29,8 +29,8 @@ let s:default_vim_format_list={
       \ 'go':     { 'autocmd-filename': ['*.go'],                                                       'cmds': [{'requirements': ['gofmt'],        'shell': 'gofmt {args} {input_file}'}]},
       \ 'awk':    { 'autocmd-filename': ['*.awk'],                                                      'cmds': [{'requirements': ['gawk'],         'shell': 'gawk -o- "$(cat {input_file})"'}]},
       \ }
-let g:vim_format_list=extend(copy(s:default_vim_format_list), get(g:, "vim_format_list", {}))
-if !exists("g:Vim_format_pre_hook")
+let g:vim_format_list=extend(copy(s:default_vim_format_list), get(g:, 'vim_format_list', {}))
+if !exists('g:Vim_format_pre_hook')
   let g:Vim_format_pre_hook = { key, args -> v:true }
 endif
 
@@ -38,7 +38,7 @@ augroup vim_format
   autocmd!
   for key in keys(g:vim_format_list)
     let upper_key = substitute(key, '\(\w\+\)', '\u\1', '')
-    if get(g:, "vim_format_fmt_on_save", 1)
+    if get(g:, 'vim_format_fmt_on_save', 1)
       let setting=g:vim_format_list[key]
       if has_key(setting, 'autocmd-filename')
         execute printf('autocmd BufWritePre %s %sFormatAuto', join(setting['autocmd-filename'],','), upper_key)
@@ -55,5 +55,5 @@ augroup END
 
 command! VimFormatCheckHealth :call vim_format#check_health()
 
-let &cpo = s:save_cpo
+let &cpoptions = s:save_cpo
 unlet s:save_cpo
