@@ -41,7 +41,12 @@ sudo apt-get install jq
 pip install autopep8
 ```
 
-### yaml - align-yaml
+### yaml - prettier / yamlfmt / align-yaml
+[gechr/yamlfmt: 📄 YAML file formatter]( https://github.com/gechr/yamlfmt )
+``` bash
+go get -u github.com/gechr/yamlfmt
+```
+
 [align\-yaml]( https://github.com/jonschlinkert/align-yaml )
 ``` bash
 npm install -g align-yaml

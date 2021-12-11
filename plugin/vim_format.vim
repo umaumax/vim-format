@@ -17,9 +17,13 @@ let s:default_vim_format_list={
       \   {'requirements': ['prettier'], 'shell': 'cat {input_file} | prettier --stdin-filepath .json 2>/dev/null'},
       \   {'requirements': ['jq'],       'shell': 'cat {input_file} | jq {args}', 'default_args': '.'}
       \ ]},
+      \ 'yaml':   { 'autocmd-filename': ['*.{yaml,yml}'], 'cmds': [
+      \   {'requirements': ['prettier'], 'shell': 'cat {input_file} | prettier --stdin-filepath .yml 2>/dev/null'},
+      \   {'requirements': ['yamlfmt'],  'shell': 'yamlfmt {args} {input_file}'},
+      \   {'requirements': ['align'],    'shell': 'align {args} {input_file} > /dev/null && cat {input_file}'}
+      \ ]},
       \ 'cmake':  { 'autocmd-filename': ['*.cmake','CMakeLists.txt'],                                   'cmds': [{'requirements': ['cmake-format'], 'shell': 'cmake-format {args} {input_file}', 'default_args': '--enable-markup=False'}]},
       \ 'python': { 'autocmd-filename': ['*.{py}'],                                                     'cmds': [{'requirements': ['autopep8'],     'shell': 'autopep8 {args} {input_file}',     'default_args': '--aggressive'}]},
-      \ 'yaml':   { 'autocmd-filename': ['*.{yaml,yml}'],                                               'cmds': [{'requirements': ['align'],        'shell': 'align {args} {input_file} > /dev/null && cat {input_file}'}]},
       \ 'toml':   { 'autocmd-filename': ['*.{toml}'],                                                   'cmds': [{'requirements': ['prettier'],     'shell': 'prettier {args} --parser=toml {input_file}'}]},
       \ 'sh':     { 'autocmd-filename': ['*.{sh,bashrc,bashenv,bash_profile}','profile','environment'], 'cmds': [{'requirements': ['shfmt'],        'shell': 'cat {input_file} | shfmt {args}',  'default_args': '-i 2 -ci -bn'}]},
       \ 'zsh':    { 'autocmd-filename': ['*.{zsh,zshrc,zshenv,zprofile}'],                              'cmds': [{'requirements': ['shfmt'],        'shell': 'cat {input_file} | shfmt {args}',  'default_args': '-i 2 -ci -bn'}]},
