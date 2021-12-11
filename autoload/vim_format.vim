@@ -65,11 +65,7 @@ function! s:get_vim_format_cmd_format(key, ...)
   return []
 endfunction
 
-function! vim_format#format(key, args)
-  let l:vim_format_cmd_format = s:get_vim_format_cmd_format(a:key)
-  if empty(l:vim_format_cmd_format)
-    return
-  endif
+function! vim_format#auto_format(key, args)
   if type(g:Vim_format_pre_hook) == type({ key, args -> v:true })
     if !g:Vim_format_pre_hook(a:key, a:args)
       return
@@ -79,6 +75,14 @@ function! vim_format#format(key, args)
     echomsg "g:Vim_format_pre_hook type is invalid: required e.g. { key, args -> v:true }"
     echomsg ''
     echohl None
+  endif
+  call vim_format#format(a:key, a:args)
+endfunction
+
+function! vim_format#format(key, args)
+  let l:vim_format_cmd_format = s:get_vim_format_cmd_format(a:key)
+  if empty(l:vim_format_cmd_format)
+    return
   endif
 
   " NOTE: write current buffer to tmporary file

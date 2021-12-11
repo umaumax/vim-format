@@ -41,14 +41,15 @@ augroup vim_format
     if get(g:, "vim_format_fmt_on_save", 1)
       let setting=g:vim_format_list[key]
       if has_key(setting, 'autocmd-filename')
-        execute printf('autocmd BufWritePre %s %sFormat', join(setting['autocmd-filename'],','), upper_key)
+        execute printf('autocmd BufWritePre %s %sFormatAuto', join(setting['autocmd-filename'],','), upper_key)
       endif
       if has_key(setting, 'autocmd-filetype')
-        execute printf("autocmd BufWritePre * if &ft =~ '%s' | %sFormat | endif", join(setting['autocmd-filetype'],'|'), upper_key)
+        execute printf("autocmd BufWritePre * if &ft =~ '%s' | %sFormatAuto | endif", join(setting['autocmd-filetype'],'|'), upper_key)
       endif
     endif
     " NOTE: e.g. decl command json -> JsonFormat
     execute printf('command! -bar -nargs=? %sFormat :call vim_format#format("%s",<q-args>)', upper_key, key)
+    execute printf('command! -bar -nargs=? %sFormatAuto :call vim_format#auto_format("%s",<q-args>)', upper_key, key)
   endfor
 augroup END
 
