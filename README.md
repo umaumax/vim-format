@@ -54,6 +54,8 @@ npm install -g align-yaml
 
 ### toml - prettier
 ``` bash
+cargo install taplo-cli
+
 npm install prettier prettier-plugin-toml --save-dev --save-exact
 ```
 
