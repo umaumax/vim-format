@@ -36,6 +36,7 @@ let s:default_vim_format_list={
       \ 'go':     { 'autocmd-filename': ['*.go'],                                                       'cmds': [{'requirements': ['gofmt'],        'shell': 'gofmt {args} {input_file}'}]},
       \ 'awk':    { 'autocmd-filename': ['*.awk'],                                                      'cmds': [{'requirements': ['gawk'],         'shell': 'gawk -o- "$(cat {input_file})"'}]},
       \ 'lua':    { 'autocmd-filename': ['*.lua'],                                                      'cmds': [{'requirements': ['stylua'],       'shell': 'stylua {input_file} && cat {input_file}'}]},
+      \ 'kt':     { 'autocmd-filename': ['*.{kt,kts}'],                                                 'cmds': [{'requirements': ['ktlint'],       'shell': 'ktlint --format {input_file} --reporter=checkstyle,output=/dev/null --log-level=none; cat {input_file}'}]},
       \ }
 let g:vim_format_list=extend(copy(s:default_vim_format_list), get(g:, 'vim_format_list', {}))
 if !exists('g:Vim_format_pre_hook')

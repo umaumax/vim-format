@@ -95,6 +95,11 @@ npm install prettier prettier-plugin-toml --save-dev --save-exact
 cargo install stylua
 ```
 
+### kotlin - ktlint
+[pinterest/ktlint: An anti-bikeshedding Kotlin linter with built-in formatter]( https://github.com/pinterest/ktlint )
+
+NOTE: A shell command at `:KtFormat` always return true even if ktlint failed with error.
+
 ----
 
 ## how to use
