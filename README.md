@@ -59,6 +59,8 @@ cargo install taplo-cli
 npm install prettier prettier-plugin-toml --save-dev --save-exact
 ```
 
+### typescript - prettier
+
 ### sh,zsh - shfmt
 [mvdan/sh: A shell parser, formatter, and interpreter \(POSIX/Bash/mksh\)]( https://github.com/mvdan/sh )
 
@@ -79,7 +81,7 @@ rustup component add rustfmt
 go get -u github.com/yamnikov-oleg/nasmfmt
 ```
 
-### prettier for json, toml, yaml
+### prettier for json, toml, yaml, typescript
 ``` bash
 npm install prettier prettier-plugin-toml --save-dev --save-exact
 ```
