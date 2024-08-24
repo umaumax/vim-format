@@ -13,6 +13,7 @@ vim plugin for misc formatting
 * nasm
 * golang
 * awk
+* perl
 
 ### cmake - cmake_format
 [umaumax/cmake\_format: Source code formatter for cmake listfiles\.]( https://github.com/umaumax/cmake_format )
@@ -89,6 +90,16 @@ npm install prettier prettier-plugin-toml --save-dev --save-exact
 ### golang - gofmt
 
 ### awk - gawk
+
+### perl - perltidy
+
+``` bash
+# mac
+brew install perltidy
+
+# ubuntu
+sudo apt install -y perltidy
+```
 
 ### lua - stylua
 [JohnnyMorganz/StyLua: An opinionated Lua code formatter]( https://github.com/JohnnyMorganz/StyLua )

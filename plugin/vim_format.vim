@@ -36,6 +36,7 @@ let s:default_vim_format_list={
       \ 'prettier': { 'autocmd-filename': [],                                                           'cmds': [{'requirements': ['prettier'],     'shell': 'prettier {args} {input_file}'}]},
       \ 'go':     { 'autocmd-filename': ['*.go'],                                                       'cmds': [{'requirements': ['gofmt'],        'shell': 'gofmt {args} {input_file}'}]},
       \ 'awk':    { 'autocmd-filename': ['*.awk'],                                                      'cmds': [{'requirements': ['gawk'],         'shell': 'gawk -o- "$(cat {input_file})"'}]},
+      \ 'perl':    { 'autocmd-filename': ['*.pl'],                                                      'cmds': [{'requirements': ['perltidy'],     'shell': 'perltidy -pbp "{input_file}"'}]},
       \ 'lua':    { 'autocmd-filename': ['*.lua'],                                                      'cmds': [{'requirements': ['stylua'],       'shell': 'stylua {input_file} && cat {input_file}'}]},
       \ 'kt':     { 'autocmd-filename': ['*.{kt,kts}'],                                                 'cmds': [{'requirements': ['ktlint'],       'shell': 'ktlint --format {input_file} --reporter=checkstyle,output=/dev/null --log-level=none; cat {input_file}'}]},
       \ }
