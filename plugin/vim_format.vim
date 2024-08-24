@@ -26,7 +26,7 @@ let s:default_vim_format_list={
       \   { 'requirements': ['taplo'],    'shell': 'taplo format {args} {input_file} 2> /dev/null && cat {input_file}', 'default_args': '-o array_auto_expand=false'},
       \   { 'requirements': ['prettier'], 'shell': 'prettier {args} --parser=toml {input_file}'}
       \ ]},
-      \ 'typescript': { 'autocmd-filename': ['*.ts'],                                                   'cmds': [{'requirements': ['prettier'],     'shell': 'cat {input_file} | prettier --stdin-filepath .ts 2>/dev/null'}]},
+      \ 'typescript': { 'autocmd-filename': ['*.ts'],                                                   'cmds': [{'requirements': ['prettier'],     'shell': 'cat {input_file} | prettier --stdin-filepath .ts {args} 2>/dev/null', 'default_args': '--no-semi --single-quote --quote-props preserve'}]},
       \ 'cmake':  { 'autocmd-filename': ['*.cmake','CMakeLists.txt'],                                   'cmds': [{'requirements': ['cmake-format'], 'shell': 'cmake-format {args} {input_file}', 'default_args': '--enable-markup=False'}]},
       \ 'python': { 'autocmd-filename': ['*.{py}'],                                                     'cmds': [{'requirements': ['autopep8'],     'shell': 'autopep8 {args} {input_file}',     'default_args': '--aggressive'}]},
       \ 'sh':     { 'autocmd-filename': ['*.{sh,bashrc,bashenv,bash_profile}','profile','environment'], 'cmds': [{'requirements': ['shfmt'],        'shell': 'cat {input_file} | shfmt {args}',  'default_args': '-i 2 -ci -bn'}]},
