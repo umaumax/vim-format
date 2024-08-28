@@ -82,7 +82,7 @@ rustup component add rustfmt
 go get -u github.com/yamnikov-oleg/nasmfmt
 ```
 
-### prettier for json, toml, yaml, typescript
+### prettier for json, toml, yaml, typescript, html
 ``` bash
 npm install prettier prettier-plugin-toml --save-dev --save-exact
 ```

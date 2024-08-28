@@ -33,7 +33,7 @@ let s:default_vim_format_list={
       \ 'zsh':    { 'autocmd-filename': ['*.{zsh,zshrc,zshenv,zprofile}'],                              'cmds': [{'requirements': ['shfmt'],        'shell': 'cat {input_file} | shfmt {args}',  'default_args': '-i 2 -ci -bn'}]},
       \ 'rust':   { 'autocmd-filename': ['*.{rs}'],                                                     'cmds': [{'requirements': ['rustfmt'],      'shell': 'cat {input_file} | rustfmt {args} --emit stdout --', 'default_args': '--edition 2021 '}]},
       \ 'nasm':   { 'autocmd-filetype': ['nasm'],                                                       'cmds': [{'requirements': ['nasmfmt'],      'shell': 'nasmfmt -ii 4 {input_file} && cat {input_file}'}]},
-      \ 'prettier': { 'autocmd-filename': [],                                                           'cmds': [{'requirements': ['prettier'],     'shell': 'prettier {args} {input_file}'}]},
+      \ 'html':   { 'autocmd-filename': ['*.html'],                                                     'cmds': [{'requirements': ['prettier'],     'shell': 'prettier {args} {input_file}'}]},
       \ 'go':     { 'autocmd-filename': ['*.go'],                                                       'cmds': [{'requirements': ['gofmt'],        'shell': 'gofmt {args} {input_file}'}]},
       \ 'awk':    { 'autocmd-filename': ['*.awk'],                                                      'cmds': [{'requirements': ['gawk'],         'shell': 'gawk -o- "$(cat {input_file})"'}]},
       \ 'perl':    { 'autocmd-filename': ['*.pl'],                                                      'cmds': [{'requirements': ['perltidy'],     'shell': 'perltidy -pbp "{input_file}"'}]},
